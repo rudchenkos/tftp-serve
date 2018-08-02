@@ -1,0 +1,6 @@
+resolver: lts-12.2
+
+packages:
+- .
+- ./tftp-0.2 # Customized to set SO_REUSEADDR and SO_REUSEPORT
+
