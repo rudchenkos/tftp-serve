@@ -35,7 +35,7 @@ library
       transformers,
       hslogger,
       directory,
-      network >= 2.3 && < 2.4
+      network >= 2.3
    extensions: CPP
               , DoAndIfThenElse
               , UnicodeSyntax
