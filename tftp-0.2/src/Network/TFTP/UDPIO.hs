@@ -74,6 +74,8 @@ bindUDPSocket hostname port = do
   (serverAddr:_) <- Sock.getAddrInfo (Just myHints) hostname port
   sock <- Sock.socket (Sock.addrFamily serverAddr) Sock.Datagram Sock.defaultProtocol
   let addr = Sock.addrAddress serverAddr
+  Sock.setSocketOption sock Sock.ReusePort 1
+  Sock.setSocketOption sock Sock.ReuseAddr 1
   Sock.bindSocket sock addr
   boundAddr <- Sock.getSocketName sock
   logInfo (printf "Bound socket at address %s" (show boundAddr))
