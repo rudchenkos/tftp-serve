@@ -13,7 +13,7 @@ maintainer:        sven.heyll@gmail.com
 homepage:          http://github.com/sheyll/tftp
 
 
-extra-source-files: src/*.hs Makefile README.md tftp.cabal LICENSE
+extra-source-files: upload/*.hs Makefile README.md tftp.cabal LICENSE
 
 source-repository head
    type:     git
@@ -47,7 +47,7 @@ library
               , GeneralizedNewtypeDeriving
 
 executable tftp_upload
-    hs-source-dirs: src/
+    hs-source-dirs: upload/
     main-is:        TFTPUpload.hs
     build-depends:  base
                   , tftp
@@ -68,6 +68,7 @@ executable tftp_upload
                 , MultiParamTypeClasses
                 , FunctionalDependencies
                 , GeneralizedNewtypeDeriving
+    buildable: False
 
 Test-Suite message-decoding
     type:           exitcode-stdio-1.0
